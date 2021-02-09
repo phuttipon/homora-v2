@@ -100,4 +100,6 @@ interface IBank {
   function accrue(address token) external;
 
   function nextPositionId() external view returns (uint);
+
+  function getPositionDebtShareOf(uint, address) external view returns (uint);
 }

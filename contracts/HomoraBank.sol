@@ -230,7 +230,12 @@ contract HomoraBank is Initializable, Governable, ERC1155NaiveReceiver, IBank {
   }
 
   /// @dev Return the debt share of the given bank token for the given position id.
-  function getPositionDebtShareOf(uint positionId, address token) external view returns (uint) {
+  function getPositionDebtShareOf(uint positionId, address token)
+    external
+    view
+    override
+    returns (uint)
+  {
     return positions[positionId].debtShareOf[token];
   }
 
